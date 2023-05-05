@@ -6,8 +6,9 @@ export class PdfGenerateService {
     constructor( private readonly pdfService: PDFService ) {}
     async pdfGenerate(
         template: string,
+        filename: string,
         options?: PDFOptions,
     ) {
-        return await this.pdfService.toStream(template, options);
+        return await this.pdfService.toFile(template, filename, options);
     }
 }

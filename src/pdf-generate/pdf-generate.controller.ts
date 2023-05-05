@@ -6,8 +6,7 @@ export class PdfGenerateController {
     constructor(private readonly pdfGenerateService: PdfGenerateService) {}
 
     @Get()
-    @Header('Content-Type', 'application/pdf')
     getPdf(){
-        return this.pdfGenerateService.pdfGenerate('./');
+        return this.pdfGenerateService.pdfGenerate('./', './tmp/sample.pdf');
     }
 }
